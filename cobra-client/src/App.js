@@ -8,11 +8,15 @@ class App extends React.Component {
 
   render(){
     return (
-      <div className="App">
+      <div className="container">
         <Header/>
         <main>
-          <Themes/>
-          <Form/>
+          <div className="theme-box">
+            <Themes/>
+          </div>
+          <div className="form-box">
+            <Form/>
+          </div>
         </main>
         <Results/>
       </div>

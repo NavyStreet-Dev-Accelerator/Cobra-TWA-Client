@@ -5,11 +5,15 @@ class Themes extends React.Component {
   render(){
     return(
       <div className="word-theme-list">
-        <h3>My Word Themes</h3>
-        <p>No themes to show.</p>
+        <div>
+          <h3>My Word Themes</h3>
+          <p>No themes to show.</p>
+        </div>
 
-        <button>New Theme</button>
-        <button>Delete Theme</button>
+        <div className="theme-buttons-container">
+          <button id="new-theme-btn">New Theme</button>
+          <button id="delete-theme-btn">Delete Theme</button>
+        </div>
       </div>
     )
   }
