@@ -1,14 +1,12 @@
 import React from 'react';
 
-class Results extends React.Component {
+const Results = () => {
 
-  render(){
-    return (
-      <div className="results">
-        <p>Results will show here</p>
-      </div>
-    )
-  }
+  return (
+    <div className="results">
+      <p>Results will show here</p>
+    </div>
+  )
 }
 
 export default Results;
