@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  /* border: 1px solid gold; */
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+
+/* Header */
+
+header {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+/* MAIN */
+
+.container {
+  width: 70%;
+  margin: auto;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.theme-box {
+  width: 30%;
+}
+
+.form-box {
+  width: 60%;
+}
+
+/*THEMES*/
+.word-theme-list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 90%;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.theme-buttons-container {
+  align-self: flex-end;
+  width: 100%;
+}
+
+.theme-buttons-container button {
+  width: 48%;
+  height: 50px;
+  color: white;
+}
+
+#new-theme-btn {
+  background: green;
+  margin-right: 2%;
+}
+
+#delete-theme-btn {
+  background: red;
+  margin-left: 2%;
+}
+
+/* FORM */
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/*Labels*/
+label {
+  margin-bottom: 1em;
+  margin-top: 3em;
+}
+
+.add-word {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: -.5em;
+}
+
+#add-word-input {
+  width: 70%;
+  margin-left: 0;
+}
+
+#add-word-btn {
+  width: 20%;
+  height: 30px;
+  background: rgb(29, 161, 250);
+  color: white;
+}
+
+.current-theme-words {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  height: 35px;
+  background: lightgrey;
+  margin-top: 1em;
+}
+
+/*Text inputs*/
+
+input[type=text],
+input[type=url]  {
+  width: 100%;
+  margin: auto;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  height: 25px;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+}
+
+/*Submit button*/
+input[type=submit] {
+  background: rgb(29, 161, 250);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  height: 50px;
+  width: 100%;
+  margin: auto;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+#captcha {
+  background: lightgrey;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  width: 150px;
+  height: 30px;
+  margin: 20px auto;
+}
+
+
+/*RESULTS*/
+
+.results {
+  margin-top: 2em;
+  height: 100px;
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.results p {
+  text-align: center;
+}
