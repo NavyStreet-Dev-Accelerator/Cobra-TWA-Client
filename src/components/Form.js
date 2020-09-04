@@ -1,7 +1,8 @@
 import React from 'react';
 
-const Form = () => {
+const Form = ({existingThemeData}) => {
 
+  console.log(existingThemeData);
   return(
     <div className="search-form">
       <form>
@@ -13,10 +14,14 @@ const Form = () => {
           <button id="add-word-btn">Add</button>
         </div>
         <div className="current-theme-words">
-          <p>This theme has no words</p>
+          {existingThemeData.themeWords ?
+            existingThemeData.themeWords.map((word) => {
+              return <p>{word}</p>
+            })
+          : <p>This theme has no words</p>}
         </div>
         <label htmlFor="themes">Enter A Theme Name</label>
-        <input type="text"></input>
+        <input value={existingThemeData ? existingThemeData.themeName : ""} type="text"></input>
         <p id="captcha">Captcha will go here</p>
         <input type="submit" value="Save Theme & Scan Website"></input>
       </form>

@@ -1,12 +1,23 @@
 import React from 'react';
 
-const Themes = () => {
+const Themes = ({themes, populateFormThemeData}) => {
+  // console.log(themes);
 
   return(
     <div className="word-theme-list">
       <div>
         <h3>My Word Themes</h3>
-        <p>No themes to show.</p>
+        {
+          themes ?
+          themes.map((theme) => {
+            return <div key={theme.themeId} onClick={() => {
+              populateFormThemeData(theme)
+            }}>
+              <p>{theme.themeName}</p>
+            </div>
+          }) :
+          <p>No themes to show.</p>
+        }
       </div>
 
       <div className="theme-buttons-container">
