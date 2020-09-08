@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 const Themes = ({themes, populateFormThemeData}) => {
   // console.log(themes);
@@ -10,7 +10,7 @@ const Themes = ({themes, populateFormThemeData}) => {
         {
           themes ?
           themes.map((theme) => {
-            return <div key={theme.themeId} onClick={() => {
+            return <div key={theme.themeId} className="current-themes" onClick={() => {
               populateFormThemeData(theme)
             }}>
               <p>{theme.themeName}</p>

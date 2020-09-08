@@ -54,6 +54,20 @@ main {
   width: 100%;
 }
 
+.current-themes {
+  height: 50px;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  background: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+
+.selected-theme {
+  background: yellow;
+}
+
 .theme-buttons-container button {
   width: 48%;
   height: 50px;
@@ -104,14 +118,33 @@ label {
   color: white;
 }
 
-.current-theme-words {
+.current-theme-words-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.no-theme-words {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 1em;
   border: 2px solid rgba(0, 0, 0, 0.6);
   height: 35px;
+  width: 100%;
   background: lightgrey;
-  margin-top: 1em;
+}
+
+.current-theme-words {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  height: 35px;
+  width: 25%;
+  background: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
 }
 
 /*Text inputs*/
