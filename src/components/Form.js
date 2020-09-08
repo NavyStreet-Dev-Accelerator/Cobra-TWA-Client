@@ -21,10 +21,11 @@ const Form = ({existingThemeData}) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    console.log(themeName);
     axios.post('https://e9cwrrxvuc.execute-api.us-west-2.amazonaws.com/beta/user', {
-      userId: 1234567,
-      themeId: 1234,
-      themeName: themeName,
+      userId: "1234567",
+      themeId: "1234",
+      themeName: formValues.themeName,
       themeWords: themeWords
     }).then((response) => {
         console.log(response);
