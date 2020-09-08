@@ -1,7 +1,13 @@
 import React, {useEffect, useState} from 'react';
 
 const Themes = ({themes, populateFormThemeData}) => {
-  // console.log(themes);
+
+  const setSelectedWordClass = (theme) => {
+    if(document.querySelector('.selected-theme')){
+      document.querySelector('.selected-theme').className = "current-themes";
+    }
+    document.getElementById(theme.themeName).className += " selected-theme";
+  }
 
   return(
     <div className="word-theme-list">
@@ -10,8 +16,9 @@ const Themes = ({themes, populateFormThemeData}) => {
         {
           themes ?
           themes.map((theme) => {
-            return <div key={theme.themeId} className="current-themes" onClick={() => {
+            return <div key={theme.themeId} id={theme.themeName} className="current-themes" onClick={() => {
               populateFormThemeData(theme)
+              setSelectedWordClass(theme)
             }}>
               <p>{theme.themeName}</p>
             </div>
