@@ -21,7 +21,6 @@ const Form = ({existingThemeData}) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(themeName);
     axios.post('https://e9cwrrxvuc.execute-api.us-west-2.amazonaws.com/beta/user', {
       userId: "1234567",
       themeId: "1234",
@@ -31,6 +30,8 @@ const Form = ({existingThemeData}) => {
         console.log(response);
     })
   }
+
+
 
   useEffect(() => {
       if(existingThemeData) {

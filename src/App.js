@@ -4,23 +4,16 @@ import Themes from './components/Themes.js';
 import Form from './components/Form.js';
 import Results from './components/Results.js';
 import axios from 'axios';
-// import useGetThemeData from './api';
+import {useGetThemes} from './api';
 
 const App = () => {
-  const [themes, setThemes] = useState(false);
+  const [themes] = useGetThemes();
   const [existingThemeData, setExistingThemeData] = useState(false);
 
 
   const populateFormThemeData = (themeData) => {
     setExistingThemeData(themeData)
   }
-
-  useEffect(() => {
-  axios.get('https://e9cwrrxvuc.execute-api.us-west-2.amazonaws.com/beta/user/1234567').then((response) => {
-    // console.log(response.data);
-    setThemes(response.data.Items)
-    })
-  }, [])
 
 
   return (
