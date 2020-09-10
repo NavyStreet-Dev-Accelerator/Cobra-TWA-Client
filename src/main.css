@@ -79,6 +79,13 @@ main {
   margin-right: 2%;
 }
 
+/* #delete-btn {
+  background: red;
+  color: white;
+  border-radius: 50%;
+  border: none;
+} */
+
 #delete-theme-btn {
   background: red;
   margin-left: 2%;

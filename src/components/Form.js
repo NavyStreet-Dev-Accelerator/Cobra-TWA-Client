@@ -33,11 +33,13 @@ const Form = ({existingThemeData}) => {
   }
 
   useEffect(() => {
-    if(existingThemeData) {
-      setThemeWords(existingThemeData.themeWords)
-      setThemeName(existingThemeData.themeName)
-    }
-  })
+      if(existingThemeData) {
+        setThemeWords(existingThemeData.themeWords)
+        setThemeName(existingThemeData.themeName)
+      };
+    },
+    [existingThemeData]
+  );
 
 
   // console.log(existingThemeData);

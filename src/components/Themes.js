@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-
 const Themes = ({themes, populateFormThemeData}) => {
 
   const setSelectedWordClass = (theme) => {
