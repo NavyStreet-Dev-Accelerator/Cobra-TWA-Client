@@ -7,25 +7,13 @@ import axios from 'axios';
 // import useGetThemeData from './api';
 
 const App = () => {
-  // const [fetchThemes, setFetchThemes] = useGetThemeData()
   const [themes, setThemes] = useState(false);
   const [existingThemeData, setExistingThemeData] = useState(false);
-  const userId = '1234567';
 
 
   const populateFormThemeData = (themeData) => {
     setExistingThemeData(themeData)
   }
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     console.log(userId);
-      // const themeData = await useGetThemeData(userId)
-      //   setThemes(themeData);
-      //   console.log(themeData);
-  //   }
-  //   fetchData()
-  // }, [])
 
   useEffect(() => {
   axios.get('https://e9cwrrxvuc.execute-api.us-west-2.amazonaws.com/beta/user/1234567').then((response) => {
@@ -33,10 +21,6 @@ const App = () => {
     setThemes(response.data.Items)
     })
   }, [])
-
-
-
-
 
 
   return (

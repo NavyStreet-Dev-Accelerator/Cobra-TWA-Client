@@ -1,12 +1,7 @@
 import React, {useEffect, useState} from 'react';
-const Themes = ({themes, populateFormThemeData}) => {
+import GetThemeData from '../api/';
 
-  const setSelectedWordClass = (theme) => {
-    if(document.querySelector('.selected-theme')){
-      document.querySelector('.selected-theme').className = "current-themes";
-    }
-    document.getElementById(theme.themeName).className += " selected-theme";
-  }
+const Themes = ({themes, populateFormThemeData}) => {
 
   return(
     <div className="word-theme-list">
@@ -14,14 +9,8 @@ const Themes = ({themes, populateFormThemeData}) => {
         <h3>My Word Themes</h3>
         {
           themes ?
-          themes.map((theme) => {
-            return <div key={theme.themeId} id={theme.themeName} className="current-themes" onClick={() => {
-              populateFormThemeData(theme)
-              setSelectedWordClass(theme)
-            }}>
-              <p>{theme.themeName}</p>
-            </div>
-          }) :
+          <GetThemeData populateFormThemeData={populateFormThemeData}/>
+         :
           <p>No themes to show.</p>
         }
       </div>
