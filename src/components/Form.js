@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import useForm from '../utils/useForm.js';
-import axios from 'axios';
+import {usePostTheme} from '../api/';
 
 const Form = ({existingThemeData}) => {
   const [themeName, setThemeName] = useState("");
   const [themeWords, setThemeWords] = useState([]);
-  const [formValues, setFormValues, handleChange] = useForm();
 
   const buildThemeArray = async (event) => {
     event.preventDefault();
@@ -17,18 +15,6 @@ const Form = ({existingThemeData}) => {
       )
     )
     document.getElementById('add-word-input').value = ""
-  }
-
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    axios.post('https://e9cwrrxvuc.execute-api.us-west-2.amazonaws.com/beta/user', {
-      userId: "1234567",
-      themeId: "1234",
-      themeName: formValues.themeName,
-      themeWords: themeWords
-    }).then((response) => {
-        console.log(response);
-    })
   }
 
 
@@ -46,7 +32,7 @@ const Form = ({existingThemeData}) => {
   // console.log(existingThemeData);
   return(
     <div className="search-form">
-      <form onSubmit={handleFormSubmit}>
+      <form onSubmit={usePostTheme}>
         <label htmlFor="url">Enter a website URL</label>
         <input type="url" id="url"></input>
         <label htmlFor="words">Enter Your Words</label>
@@ -58,7 +44,7 @@ const Form = ({existingThemeData}) => {
           {themeWords.length > 0 ?
             themeWords.map((word, index) => {
               return <div className="current-theme-words" key={index}>
-                <p>{word}</p>
+                <p className="words-in-theme">{word}</p>
               </div>
             })
           :
@@ -66,7 +52,7 @@ const Form = ({existingThemeData}) => {
           }
         </div>
         <label htmlFor="themes">Enter A Theme Name</label>
-        <input type="text" name="themeName" onChange={handleChange} value={formValues ? formValues.themeName : themeName}/>
+        <input type="text" name="themeName" defaultValue={themeName ? themeName : ""} id="theme-name"/>
         <p id="captcha">Captcha will go here</p>
         <input type="submit" value="Save Theme & Scan Website"></input>
       </form>

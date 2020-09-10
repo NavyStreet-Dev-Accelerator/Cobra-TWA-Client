@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import useDatabase from '../api/';
+import React from 'react';
 
 const Themes = ({themes, populateFormThemeData}) => {
 

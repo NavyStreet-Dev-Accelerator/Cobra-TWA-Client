@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Header from './components/Header.js';
 import Themes from './components/Themes.js';
 import Form from './components/Form.js';
 import Results from './components/Results.js';
-import axios from 'axios';
 import {useGetThemes} from './api';
 
 const App = () => {
