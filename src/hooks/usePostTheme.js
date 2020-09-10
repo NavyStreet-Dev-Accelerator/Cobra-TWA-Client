@@ -1,25 +1,4 @@
-import {useState, useEffect } from "react";
-import {getThemes, createTheme} from './index.js';
-
-export const useGetThemes = () => {
-      const [themes, setThemes] = useState([]);
-
-      useEffect(() => {
-        let userId = 1234567;
-
-        async function fetchData() {
-          const result = await getThemes(userId);
-          setThemes(result);
-        }
-
-        fetchData();
-        return () => {}
-      }, [themes]);
-
-      return (
-        [themes]
-      );
-  }
+import {createTheme} from '../api/index.js';
 
 export const usePostTheme = (event) => {
     event.preventDefault();

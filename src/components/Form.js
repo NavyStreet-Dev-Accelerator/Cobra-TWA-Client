@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {usePostTheme} from '../api/apiHooks.js';
+import {usePostTheme} from '../hooks/usePostTheme.js';
 
 const Form = ({existingThemeData}) => {
   const [themeName, setThemeName] = useState("");
