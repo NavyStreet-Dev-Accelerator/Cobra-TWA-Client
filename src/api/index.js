@@ -14,11 +14,9 @@ export const createTheme = (themeObject) => {
 };
 
 export const deleteTheme = (userId, themeId) => {
-
   db.delete(`/delete/${userId}/${themeId}`);
 };
 
-export const editTheme = (userId, themeId) => {
-  db.put(`/update/${userId}/${themeId}`);
+export const editTheme = (userId, themeId, themeObject) => {
+  db.put(`/update/${userId}/${themeId}`, themeObject);
 };
-
