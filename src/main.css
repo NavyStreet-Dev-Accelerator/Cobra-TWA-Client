@@ -65,10 +65,10 @@ main {
   margin: 1em;
 }
 
-#delete-btn-container {
-  align-self: flex-end;
-  margin-top: -7%;
-  margin-bottom: -3%;
+.delete-btn-container {
+  margin-left: 90%;
+  z-index: 1;
+  position: sticky;
   height: 20px;
   width: 30px;
 }
@@ -77,10 +77,8 @@ main {
   background: red;
   color: white;
   border-radius: 90%;
-  width: 60%;
   text-align: center;
   border: none;
-  align-self: flex-end;
   display: flex;
   justify-content: center;
 }

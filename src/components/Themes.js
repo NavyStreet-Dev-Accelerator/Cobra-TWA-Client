@@ -31,20 +31,19 @@ const Themes = ({themes, populateFormThemeData}) => {
                 populateFormThemeData(theme)
               }}
           >
+          <div className="delete-btn-container">
+          {
+            deleteMode ?
+            <button class="delete-btn"
+            onClick={() => {
+              deleteTheme(userId, theme.themeId)
+            }}>X</button>
+            :
+            ""
+          }
+          </div>
             <p>{theme.themeName}</p>
           </div>
-
-            <div id="delete-btn-container">
-            {
-              deleteMode ?
-              <button class="delete-btn"
-              onClick={() => {
-                deleteTheme(userId, theme.themeId)
-              }}>X</button>
-              :
-              ""
-            }
-            </div>
           </>
           })
          :
