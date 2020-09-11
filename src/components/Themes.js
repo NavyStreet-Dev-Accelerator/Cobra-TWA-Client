@@ -1,6 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const Themes = ({themes, populateFormThemeData}) => {
+  const [deleteMode, setDeleteMode] = useState(false)
+
+  const toggleDeleteMode = (event) => {
+    event.preventDefault();
+    setDeleteMode(!deleteMode)
+  }
 
   const setSelectedWordClass = (theme) => {
     if(document.querySelector('.selected-theme')){
@@ -21,6 +27,16 @@ const Themes = ({themes, populateFormThemeData}) => {
                 populateFormThemeData(theme)
               }}
           >
+
+            <div id="delete-btn-container">
+            {
+              deleteMode ?
+              <button id="delete-btn">X</button>
+              :
+              ""
+            }
+            </div>
+
             <p>{theme.themeName}</p>
           </div>
           })
@@ -31,7 +47,7 @@ const Themes = ({themes, populateFormThemeData}) => {
 
       <div className="theme-buttons-container">
         <button id="new-theme-btn">New Theme</button>
-        <button id="delete-theme-btn">Delete Theme</button>
+        <button id="delete-mode-btn" onClick={toggleDeleteMode}>Delete Theme</button>
       </div>
     </div>
   )

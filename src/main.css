@@ -59,9 +59,30 @@ main {
   border: 2px solid rgba(0, 0, 0, 0.6);
   background: lightgrey;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1em;
+}
+
+#delete-btn-container {
+  align-self: flex-end;
+  margin-top: -7%;
+  margin-bottom: -3%;
+  height: 20px;
+  width: 30px;
+}
+
+#delete-btn {
+  background: red;
+  color: white;
+  border-radius: 90%;
+  width: 60%;
+  text-align: center;
+  border: none;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
 }
 
 .selected-theme {
@@ -79,14 +100,7 @@ main {
   margin-right: 2%;
 }
 
-/* #delete-btn {
-  background: red;
-  color: white;
-  border-radius: 50%;
-  border: none;
-} */
-
-#delete-theme-btn {
+#delete-mode-btn {
   background: red;
   margin-left: 2%;
 }
