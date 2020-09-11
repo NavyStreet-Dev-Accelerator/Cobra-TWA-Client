@@ -16,5 +16,6 @@ export const useGetThemes = () => {
     return () => {};
   }, []);
 
+
   return [themes];
 };

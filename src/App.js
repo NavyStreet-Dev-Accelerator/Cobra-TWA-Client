@@ -6,6 +6,7 @@ import Results from "./components/Results.js";
 import { useGetThemes } from "./hooks/useGetThemes.js";
 import useGetId from "./hooks/useGetId";
 
+
 const App = () => {
   const [userId] = useGetId();
   console.log(userId);
@@ -13,8 +14,10 @@ const App = () => {
   const [existingThemeData, setExistingThemeData] = useState(false);
 
   const populateFormThemeData = (themeData) => {
+
     setExistingThemeData(themeData);
   };
+
 
   return (
     <div className="container">
