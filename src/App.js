@@ -3,7 +3,7 @@ import Header from './components/Header.js';
 import Themes from './components/Themes.js';
 import Form from './components/Form.js';
 import Results from './components/Results.js';
-import {useGetThemes} from './api';
+import {useGetThemes} from './hooks/useGetThemes.js';
 
 const App = () => {
   const [themes] = useGetThemes();
