@@ -3,7 +3,7 @@ import { getThemes } from "../api/index.js";
 
 export const useGetThemes = () => {
   const [themes, setThemes] = useState([]);
-  console.log(themes);
+
   useEffect(() => {
     let userId = 1234567;
 
@@ -15,7 +15,6 @@ export const useGetThemes = () => {
     fetchData();
     return () => {};
   }, []);
-
 
   return [themes];
 };

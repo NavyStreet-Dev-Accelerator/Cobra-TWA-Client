@@ -6,7 +6,7 @@ const useGetId = () => {
   useEffect(() => {
     if (localStorage.getItem("user") === null) {
       const newUuid = uuidv4();
-      localStorage.setItem("user", uuid);
+      localStorage.setItem("user", newUuid);
       setUuid(newUuid);
     } else {
       const currentUuid = localStorage.getItem("user");
