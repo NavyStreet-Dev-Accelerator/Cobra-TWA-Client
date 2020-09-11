@@ -1,4 +1,4 @@
-import {createTheme} from '../api/index.js';
+import {editTheme} from '../api/index.js';
 
 export const useEditTheme = (event) => {
     event.preventDefault();
@@ -18,5 +18,5 @@ export const useEditTheme = (event) => {
       themeWords: themeWordsArray
     }
 
-    createTheme(themeObject)
+    editTheme(themeObject)
   }

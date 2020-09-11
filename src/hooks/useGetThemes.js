@@ -14,7 +14,7 @@ export const useGetThemes = () => {
 
         fetchData();
         return () => {}
-      }, [themes]);
+      }, []);
 
       return (
         [themes]
