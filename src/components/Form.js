@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {usePostTheme} from '../hooks/usePostTheme.js';
+import {useEditTheme} from '../hooks/useEditTheme.js';
 
 const Form = ({existingThemeData}) => {
   const [themeName, setThemeName] = useState("");
@@ -32,7 +33,10 @@ const Form = ({existingThemeData}) => {
   // console.log(existingThemeData);
   return(
     <div className="search-form">
-      <form onSubmit={usePostTheme}>
+      <form onSubmit={existingThemeData ?
+        useEditTheme
+          :
+        usePostTheme}>
         <label htmlFor="url">Enter a website URL</label>
         <input type="url" id="url"></input>
         <label htmlFor="words">Enter Your Words</label>

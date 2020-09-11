@@ -14,9 +14,9 @@ export const createTheme = (themeObject) => {
 }
 
 export const deleteTheme = (userId, themeId) => {
-  db.delete(`/${userId}/${themeId}`)
+  db.delete(`/delete/${userId}/${themeId}`)
 }
 
 export const editTheme = (userId, themeId) => {
-  db.put(`/${userId}/${themeId}`)
+  db.put(`/update/${userId}/${themeId}`)
 }
