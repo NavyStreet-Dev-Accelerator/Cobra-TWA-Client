@@ -73,7 +73,7 @@ main {
   width: 30px;
 }
 
-.delete-btn {
+.delete-btn, .delete-btn-words {
   background: red;
   color: white;
   border-radius: 90%;
@@ -137,6 +137,14 @@ label {
   color: white;
 }
 
+.delete-btn-words-container {
+  align-self: flex-end;
+}
+
+.delete-btn-words {
+  width: 70%;
+}
+
 .current-theme-words-container {
   display: flex;
   align-items: center;
@@ -161,9 +169,11 @@ label {
   width: 25%;
   background: lightgrey;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-transform: capitalize;
+  padding-bottom: 10px;
 }
 
 /*Text inputs*/
