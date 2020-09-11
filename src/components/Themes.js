@@ -1,6 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {deleteTheme} from '../api/';
 
 const Themes = ({themes, populateFormThemeData}) => {
+  let userId = 1234567
+
+  const [deleteMode, setDeleteMode] = useState(false)
+
+  const toggleDeleteMode = (event) => {
+    event.preventDefault();
+    setDeleteMode(!deleteMode)
+  }
 
   const setSelectedWordClass = (theme) => {
     if(document.querySelector('.selected-theme')){
@@ -16,13 +25,26 @@ const Themes = ({themes, populateFormThemeData}) => {
         {
           themes ?
           themes.map((theme) => {
-            return <div key={theme.themeId} id={theme.themeName} className="current-themes" onClick={() => {
+            return <>
+            <div key={theme.themeId} id={theme.themeName} className="current-themes" onClick={() => {
                 setSelectedWordClass(theme)
                 populateFormThemeData(theme)
               }}
           >
+          <div className="delete-btn-container">
+          {
+            deleteMode ?
+            <button class="delete-btn"
+            onClick={() => {
+              deleteTheme(userId, theme.themeId)
+            }}>X</button>
+            :
+            ""
+          }
+          </div>
             <p>{theme.themeName}</p>
           </div>
+          </>
           })
          :
           <p>No themes to show.</p>
@@ -31,7 +53,7 @@ const Themes = ({themes, populateFormThemeData}) => {
 
       <div className="theme-buttons-container">
         <button id="new-theme-btn">New Theme</button>
-        <button id="delete-theme-btn">Delete Theme</button>
+        <button id="delete-mode-btn" onClick={toggleDeleteMode}>Delete Theme</button>
       </div>
     </div>
   )

@@ -12,3 +12,7 @@ export const getThemes = async (userId) => {
 export const createTheme = (themeObject) => {
   db.post('/', themeObject)
 }
+
+export const deleteTheme = (userId, themeId) => {
+  db.delete(`/${userId}/${themeId}`)
+}
