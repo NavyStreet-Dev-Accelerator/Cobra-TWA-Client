@@ -1,22 +1,22 @@
-import axios from 'axios';
+import axios from "axios";
 
 const db = axios.create({
-  baseURL: 'https://da8fcqr6bl.execute-api.us-west-2.amazonaws.com/dev'
-})
+  baseURL: "https://da8fcqr6bl.execute-api.us-west-2.amazonaws.com/dev",
+});
 
 export const getThemes = async (userId) => {
-  let result = await db.get(`/user/${userId}`)
-  return result.data.Items
-}
+  let result = await db.get(`/user/${userId}`);
+  return result.data.Items;
+};
 
 export const createTheme = (themeObject) => {
-  db.post('/new', themeObject)
-}
+  db.post("/new", themeObject);
+};
 
 export const deleteTheme = (userId, themeId) => {
-  db.delete(`/${userId}/${themeId}`)
-}
+  db.delete(`/delete/${userId}/${themeId}`);
+};
 
 export const editTheme = (userId, themeId) => {
-  db.put(`/${userId}/${themeId}`)
-}
+  db.put(`/update/${userId}/${themeId}`);
+};
