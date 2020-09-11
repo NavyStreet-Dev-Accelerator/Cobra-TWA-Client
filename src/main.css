@@ -73,7 +73,7 @@ main {
   width: 30px;
 }
 
-#delete-btn {
+.delete-btn {
   background: red;
   color: white;
   border-radius: 90%;

@@ -1,1 +1,0 @@
-import {deleteTheme} from '../api/'

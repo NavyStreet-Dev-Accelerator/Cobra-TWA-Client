@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
+import {deleteTheme} from '../api/';
 
 const Themes = ({themes, populateFormThemeData}) => {
+  let userId = 1234567
+
   const [deleteMode, setDeleteMode] = useState(false)
 
   const toggleDeleteMode = (event) => {
@@ -22,23 +25,27 @@ const Themes = ({themes, populateFormThemeData}) => {
         {
           themes ?
           themes.map((theme) => {
-            return <div key={theme.themeId} id={theme.themeName} className="current-themes" onClick={() => {
+            return <>
+            <div key={theme.themeId} id={theme.themeName} className="current-themes" onClick={() => {
                 setSelectedWordClass(theme)
                 populateFormThemeData(theme)
               }}
           >
+            <p>{theme.themeName}</p>
+          </div>
 
             <div id="delete-btn-container">
             {
               deleteMode ?
-              <button id="delete-btn">X</button>
+              <button class="delete-btn"
+              onClick={() => {
+                deleteTheme(userId, theme.themeId)
+              }}>X</button>
               :
               ""
             }
             </div>
-
-            <p>{theme.themeName}</p>
-          </div>
+          </>
           })
          :
           <p>No themes to show.</p>
