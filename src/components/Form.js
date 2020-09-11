@@ -18,6 +18,12 @@ const Form = ({existingThemeData}) => {
     document.getElementById('add-word-input').value = ""
   }
 
+  const deleteThemeWord = (index) => {
+    const themeWordsArray = themeWords
+    themeWordsArray.splice(index, 1)
+    setThemeWords(themeWordsArray)
+  }
+
 
 
   useEffect(() => {
@@ -48,6 +54,11 @@ const Form = ({existingThemeData}) => {
           {themeWords.length > 0 ?
             themeWords.map((word, index) => {
               return <div className="current-theme-words" key={index}>
+              <div className="delete-btn-words-container">
+                <button className="delete-btn-words" onClick={() => {
+                  deleteThemeWord(index)
+                }}>X</button>
+              </div>
                 <p className="words-in-theme">{word}</p>
               </div>
             })
